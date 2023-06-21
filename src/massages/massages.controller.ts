@@ -1,4 +1,5 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post,ParseBoolPipe } from '@nestjs/common';
+import { CreateMessageDTO } from './dtos/create-message.dto';
 
 @Controller('massages/massages')
 export class MassagesController {
@@ -9,13 +10,14 @@ export class MassagesController {
     }
     
     @Get('/:id')
-    getmassages(@Param('id') id:string){
+    getmassages(@Param('id', ParseBoolPipe) id:string){
         console.log(id)
     }
 
     @Post()
-    createmassages(@Body() body:any){
-        console.log(body)
+    createmassages(@Body() body:CreateMessageDTO){
+        console.log(CreateMessageDTO)
+        console.log(body.content)
     }
 
 }
