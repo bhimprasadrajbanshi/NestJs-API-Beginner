@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 ### Message Api
+- data retrieve the all Message
+- data retrieve the by Id Message
+- Create message
 
 
 
